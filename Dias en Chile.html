@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Días</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contador {
+            text-align: center;
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .dias {
+            font-size: 3em;
+        }
+        .texto {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="contador">
+        <h1>Contador de Días</h1>
+        <p class="dias" id="dias"></p>
+        <p class="texto">días en Chile</p>
+    </div>
+
+    <script>
+        function calcularDiasDesde(fecha) {
+            const hoy = new Date();
+            const inicio = new Date(fecha);
+            const diferencia = hoy - inicio;
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            return dias;
+        }
+
+        const fechaInicio = '2024-12-14';
+        document.getElementById('dias').textContent = calcularDiasDesde(fechaInicio);
+    </script>
+</body>
+</html>
